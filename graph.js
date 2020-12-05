@@ -1,7 +1,19 @@
+"use strict";
 // const express = require('express');
 // const fs = require('fs');
 
 // const path = require('path');
+
+let myRequest = new Request("./results.json");
+
+
+fetch(myRequest)
+    .then( function( resp) {
+        return resp.json();
+    })
+    .then(function(data) {
+        console.log(data);
+    });
 
 const students = getStudentData()
 const studentCnt = students.length;

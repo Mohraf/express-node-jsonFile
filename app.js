@@ -125,6 +125,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+'/index.html'));
 })
 
+app.get('/charts', (req, res) => {
+    
+    res.json(getStudentData());
+})
+
 //configure the server port
 app.listen(3000, () => {
     console.log('Server runs on port 3000')
